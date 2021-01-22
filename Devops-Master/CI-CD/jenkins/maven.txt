@@ -1,0 +1,29 @@
+cd /opt
+mkdir maven
+cd /maven
+wget https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+untar maven file by using following command
+tar -xvzf apache-maven-3.6.3.bin.tar.gz
+cd apache-maven-3.6.3
+cd bin
+setup maven path to execute maven commands
+copy maven path "/opt/maven/apache-maven-3.6.3"
+export to .bash_profile
+vi ~/.bash_profile
+export M2_HOME=/opt/maven/apache-maven-3.6.3
+PATH=$PATH:$M2_HOME:$HOME/bin
+
+
+
+
+
+
+
+mvn org.apache.maven.plugins:maven-install-plugin:3.0.0-M1:install-file  -Dfile=path-to-your-artifact-jar \
+                                                                              -DgroupId=your.groupId \
+                                                                              -DartifactId=your-artifactId \
+                                                                              -Dversion=version \
+                                                                              -Dpackaging=jar \
+                                                                              -DgeneratePom=true
+																			  
+																			  mvn install:install-file

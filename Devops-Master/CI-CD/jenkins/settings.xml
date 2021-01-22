@@ -1,0 +1,29 @@
+<servers>
+    <server>
+      <id>private-repo</id>
+	   <configuration>
+        <httpHeaders>
+          <property>
+            <name>Authorization</name>
+            <!-- Base64-encoded username:access_token -->
+            <value>Basic {Place the token here}</value>
+          </property>
+        </httpHeaders>
+      </configuration>
+    </server>
+</server>
+
+<repositories>
+      <repository>
+                    <id>private-repo</id>
+                    `<name>Private` Repository</name>
+                    <url>{Place the RAW github url here}</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+       </repository>
+</repositories>
